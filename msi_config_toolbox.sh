@@ -26,6 +26,13 @@ check_and_install_dependencies() {
     done
 }
 
+# Disclaimer message
+show_disclaimer() {
+    dialog --clear --backtitle "MSi Toolbox Setup v1.1" \
+    --title "Disclaimer" \
+    --msgbox "Welcome to the MSi Toolbox Setup (Version 1.1). This tool helps you configure the MSi environment. Use at your own risk. Proceeding means you agree to the terms." 10 50
+}
+
 # Main menu function
 main_menu() {
     dialog --clear --backtitle "MSi Configuration ToolBox" \
@@ -166,6 +173,9 @@ system_status_menu() {
 
 # Run dependency check
 check_and_install_dependencies
+
+# Show the disclaimer
+show_disclaimer
 
 # Start with the main menu
 main_menu
